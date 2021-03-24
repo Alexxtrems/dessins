@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dessins</title>
+</head>
+<body>
+    <h1>Dessins</h1>
+    
+    <!-- ici le render permet d'afficher notre svg, car on doit toujours renvoyer du texte -->
+    <?= $container->render() ?>
+    
+    <form>
+            <fieldset>
+                <legend>Configuration de Nos Formes</legend>
+                <ul>
+                    <li>
+                        <label for="shape">Choix de la forme</label>
+                        <select id="shape"> 
+                            <?php foreach ($forms as $form): ?>
+                            <option><?= $form ?></option>
+                            <?php endforeach?>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="color">Choix de la couleur</label>
+                        <select id="color">
+                            <?php foreach ($colors as $color): ?>
+                            <option><?= $color ?></option>
+                            <?php endforeach?>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="radius">Choix du rayon</label>
+                        <input type="number" id="radius" min="10" max="50" value="10">
+                    </li>
+                    
+                    <li>
+                        <button type="button" id="clear-canvas">Effacer le dessin</button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        
+    
+</body>
+</html>
